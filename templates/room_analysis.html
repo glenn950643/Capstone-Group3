@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Burbujas decorativas -->
+<img src="{{ url_for('static', filename='images/bubbles-four.png') }}" class="about-bubble" style="top: 20%; left: 5%; width: 200px;">
+<img src="{{ url_for('static', filename='images/bubbles-four.png') }}" class="about-bubble" style="top: 40%; right: 5%; width: 200px;">
+<img src="{{ url_for('static', filename='images/bubbles-four.png') }}" class="about-bubble" style="top: 30%; right: 20%; width: 50px;">
+<img src="{{ url_for('static', filename='images/bubbles-four.png') }}" class="about-bubble" style="bottom: 5%; left: 3%; width: 100px;">
+<img src="{{ url_for('static', filename='images/bubbles-two.png') }}" class="about-bubble" style="top: 30%; right: 30%; width: 100px;">
+<img src="{{ url_for('static', filename='images/bubbles-four.png') }}" class="about-bubble" style="top: 35%; left: 23%; width: 150px;">
+<img src="{{ url_for('static', filename='images/bubbles-four.png') }}" class="about-bubble" style="bottom: 2%; right: 30%; width: 150px;">
+
+<div class="room-analysis-container">
+    <h4 class="title">Room Reality Check</h4>
+    <p class="subtitle">Upload a room photo and let AI decide — Messy or Marvelous?</p>
+
+    <form method="POST" enctype="multipart/form-data" class="form-section">
+        <input type="file" name="image" required>
+        <button type="submit" class="analyze-btn">Analyze Image</button>
+    </form>
+
+    {% if prediction and prediction_roboflow %}
+    <div class="results">
+        <div class="image-box">
+            <img src="{{ image_url }}" alt="Uploaded Room" class="preview-img">
+        </div>
+        <div class="prediction-box">
+            <h5>VGG16 Pretrained Model</h5>
+            <p class="result-label">{{ prediction }}</p>
+            {% if prediction == 'Messy' %}
+                <p class="message">😅 Oh no! Your room is messy. Time to book our cleaning service.</p>
+            {% else %}
+                <p class="message">🌟 Wow! Your room is clean. Thanks for trusting us. Drop a review!</p>
+            {% endif %}
+        </div>
+        <div class="prediction-box">
+            <h5>Roboflow AI Prediction</h5>
+            <p class="result-label">{{ prediction_roboflow }}</p>
+            {% if prediction_roboflow == 'messy' %}
+                <p class="message">🧹 Roboflow thinks it's messy too! Let us help you clean it up.</p>
+            {% elif prediction_roboflow == 'clean' %}
+                <p class="message">✅ Roboflow agrees it's clean. Great job keeping it tidy!</p>
+            {% else %}
+                <p class="message">🤔 Roboflow could not confidently classify the image.</p>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+<style>
+.room-analysis-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.subtitle {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.form-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+input[type="file"] {
+    font-size: 0.9rem;
+}
+
+.analyze-btn {
+    background-color: #f26522;
+    color: white;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.results {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.image-box, .prediction-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.preview-img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.result-label {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 15px 0;
+}
+
+.message {
+    font-size: 1rem;
+    color: #333;
+}
+</style>
+
+{% endblock %}

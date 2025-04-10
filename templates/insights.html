@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+<img src="{{ url_for('static', filename='images/bubbles-four.png') }}" class="about-bubble" style="top: 20%; left: 5%; width: 200px;">
+<img src="{{ url_for('static', filename='images/bubbles-four.png') }}" class="about-bubble" style="top: 40%; right: 5%; width: 200px;">
+<img src="{{ url_for('static', filename='images/bubbles-four.png') }}" class="about-bubble" style="top: 30%; right: 20%; width: 50px;">
+<img src="{{ url_for('static', filename='images/bubbles-four.png') }}" class="about-bubble" style="bottom: 5%; left: 3%; width: 100px;">
+<img src="{{ url_for('static', filename='images/bubbles-two.png') }}" class="about-bubble" style="top: 30%; right: 30%; width: 100px;">
+<img src="{{ url_for('static', filename='images/bubbles-four.png') }}" class="about-bubble" style="top: 35%; left: 23%; width: 150px;">
+<img src="{{ url_for('static', filename='images/bubbles-four.png') }}" class="about-bubble" style="bottom: 2%; right: 30%; width: 150px;">
+
+<div style="text-align:center; padding: 30px;">
+    <h2 style="color: white;">Company Insights</h2>
+    <p style="color: white;">Here are our data-driven dashboards that power smarter decisions.</p>
+
+    <div style="margin-top: 30px;">
+        <img src="{{ url_for('static', filename='images/insights/image1.png') }}" style="max-width: 90%; border-radius: 15px; margin-bottom: 40px;">
+        <img src="{{ url_for('static', filename='images/insights/image2.png') }}" style="max-width: 90%; border-radius: 15px; margin-bottom: 40px;">
+        <img src="{{ url_for('static', filename='images/insights/image3.png') }}" style="max-width: 90%; border-radius: 15px;">
+    </div>
+</div>
+
+{% endblock %}

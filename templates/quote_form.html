@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<img src="{{ url_for('static', filename='images/bubbles-four.png') }}" class="about-bubble" style="top: 20%; left: 5%; width: 200px;">
+<img src="{{ url_for('static', filename='images/bubbles-four.png') }}" class="about-bubble" style="top: 40%; right: 5%; width: 200px;">
+<img src="{{ url_for('static', filename='images/bubbles-four.png') }}" class="about-bubble" style="top: 30%; right: 20%; width: 50px;">
+<img src="{{ url_for('static', filename='images/bubbles-four.png') }}" class="about-bubble" style="bottom: 5%; left: 3%; width: 100px;">
+<img src="{{ url_for('static', filename='images/bubbles-two.png') }}" class="about-bubble" style="top: 30%; right: 30%; width: 100px;">
+<img src="{{ url_for('static', filename='images/bubbles-four.png') }}" class="about-bubble" style="top: 35%; left: 23%; width: 150px;">
+<img src="{{ url_for('static', filename='images/bubbles-four.png') }}" class="about-bubble" style="bottom: 2%; right: 30%; width: 150px;">
+
+<h2 class="quote-heading">Almost There! A Few Quick Details</h2>
+
+<form method="POST" action="/predict_price" class="quote-form">
+  <input type="hidden" name="cleaning_type" value="{{ cleaning_type }}">
+  <input type="hidden" name="house_type" value="{{ house_type }}">
+
+  <div class="form-group">
+    <label>🛏️Bedrooms in Your Home</label>
+    <input type="number" name="bedrooms" required>
+  </div>
+
+  <div class="form-group">
+    <label>🚿 Bathrooms to Be Cleaned</label>
+    <input type="number" name="bathrooms" required>
+  </div>
+
+  <button type="submit" class="quote-select-btn">Get Estimate</button>
+</form>
+
+{% endblock %}

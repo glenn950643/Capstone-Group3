@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predict Cleaning Price</title>
+</head>
+<body>
+    <h2>Enter Property Details</h2>
+    <form method="post">
+        Bedrooms: <input type="number" name="bedrooms" min="0" step="1" required><br><br>
+        Bathrooms: <input type="number" name="bathrooms" step="0.5" required><br><br>
+        Job Type:
+        <select name="job_type">
+            <option value="standard_clean">Standard Clean</option>
+            <option value="deep_clean">Deep Clean</option>
+        </select><br><br>
+        House Type:
+        <select name="house_type">
+            <option value="Condo/Townhouse">Condo/Townhouse</option>
+            <option value="Detached">Detached</option>
+        </select><br><br>
+        <input type="submit" value="Predict Price">
+    </form>
+
+    {% if prices %}
+        <h3>🧾 Estimated Price Ranges:</h3>
+        <ul>
+            <li><strong>Economy:</strong> {{ prices['economy'] }}</li>
+            <li><strong>Standard:</strong> {{ prices['standard'] }}</li>
+            <li><strong>Premium:</strong> {{ prices['premium'] }}</li>
+        </ul>
+    {% endif %}
+</body>
+</html>

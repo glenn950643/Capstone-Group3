@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+{% block content %}
+
+<img src="{{ url_for('static', filename='images/bubbles-four.png') }}" class="about-bubble" style="top: 20%; left: 5%; width: 200px;">
+<img src="{{ url_for('static', filename='images/bubbles-four.png') }}" class="about-bubble" style="top: 40%; right: 5%; width: 200px;">
+<img src="{{ url_for('static', filename='images/bubbles-four.png') }}" class="about-bubble" style="top: 30%; right: 20%; width: 50px;">
+<img src="{{ url_for('static', filename='images/bubbles-four.png') }}" class="about-bubble" style="bottom: 5%; left: 3%; width: 100px;">
+<img src="{{ url_for('static', filename='images/bubbles-two.png') }}" class="about-bubble" style="top: 30%; right: 30%; width: 100px;">
+<img src="{{ url_for('static', filename='images/bubbles-four.png') }}" class="about-bubble" style="top: 35%; left: 23%; width: 150px;">
+<img src="{{ url_for('static', filename='images/bubbles-four.png') }}" class="about-bubble" style="bottom: 2%; right: 30%; width: 150px;">
+
+<style>
+.team-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 40px;
+    background-color: #025e30;
+    color: #fff;
+    font-family: Calibri, sans-serif;
+}
+
+.team-member {
+    display: flex;
+    align-items: center;
+    background-color: #038c4c; /* softer green */
+    border: 2px solid #ffffff33;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 1200px;
+    gap: 20px;
+    color: white;
+    font-family: Calibri, sans-serif;
+}
+
+.member-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    background-color: #ccc;
+    object-fit: cover;
+}
+
+.member-info h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    font-family: Calibri, sans-serif;
+}
+
+.member-info ul {
+    margin-top: 8px;
+    padding-left: 20px;
+}
+
+.member-info ul li {
+    text-align: left;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #e0f7e9;
+    font-family: Calibri, sans-serif;
+}
+</style>
+
+<div class="team-section">
+    <div class="team-member">
+        <img src="{{ url_for('static', filename='images/team/dharani.jpg') }}" class="member-photo" alt="Dharani">
+        <div class="member-info">
+            <h3>Dharani Koganti - 0850309</h3>
+            <ul>
+                <li>Synthetic Dataset Generation</li>
+                <li>Linear REagression Model for Price Prediction</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="team-member">
+        <img src="{{ url_for('static', filename='images/team/glenn.jpg') }}" class="member-photo" alt="Glenn">
+        <div class="member-info">
+            <h3>Glenn Oscar Valdivieso Ulloa - 0861777</h3>
+            <ul>
+                <li>Created a Roboflow model to classify images using the Hosted API feature.</li>
+                <li>Applied data augmentation techniques to increase the dataset size (7x) and improve the training process.</li>
+                <li>Achieved 96.8% accuracy, with accurate predictions.</li>
+                <li>Integrated the model into a Flask solution to make predictions based on uploaded images.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="team-member">
+        <img src="{{ url_for('static', filename='images/team/jeevitha.png') }}" class="member-photo" alt="Jeevitha">
+        <div class="member-info">
+            <h3>Jeevitha Chandrasekar - 0856328</h3>
+            <ul>
+                <li>Created Dashboard for General Analysis, Revenue Analysis, Shift Hour Analysis</li>
+                <li>Created XGBoost Model for Price Prediction</li>
+                <li>Created Image Classification model using VGG16 & Data Augmentation</li>
+                <li>Created end- to- end Flask App</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="team-member">
+        <img src="{{ url_for('static', filename='images/team/oreva.jpg') }}" class="member-photo" alt="Oreva">
+        <div class="member-info">
+            <h3>Oreva Evbomenya - 0862114</h3>
+            <ul>
+                <li>Created Model For Image Classification</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="team-member">
+        <img src="{{ url_for('static', filename='images/team/ziegen.jpg') }}" class="member-photo" alt="Ziegen">
+        <div class="member-info">
+            <h3>Ziegen Samuel Raja - 0850796</h3>
+            <ul>
+                <li>Created Random Forest Model and reduced Overfitting</li>
+                <li>Created UI design for the app</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

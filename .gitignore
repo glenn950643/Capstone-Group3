@@ -1,0 +1,18 @@
+# Ignorar entorno virtual
+venv5/
+__pycache__/
+*.pyc
+
+# Archivos grandes de librerías
+*.dll
+*.pyd
+*.so
+
+# Archivos de Jupyter
+.ipynb_checkpoints/
+
+
+# Archivos de modelos grandes
+*.h5
+*.keras
+

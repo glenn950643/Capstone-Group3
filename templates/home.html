@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="home-welcome">
+    <!-- Bubbles Around -->
+    <img src="{{ url_for('static', filename='images/bubbles-four.png') }}" class="bubble bubble-top-left">
+    <img src="{{ url_for('static', filename='images/bubbles-two.png') }}" class="bubble bubble-bottom-left">
+    <img src="{{ url_for('static', filename='images/bubbles-two.png') }}" class="bubble bubble-top-right">
+    <img src="{{ url_for('static', filename='images/bubbles-four.png') }}" class="bubble bubble-bottom-right">
+    <img src="{{ url_for('static', filename='images/bubbles-two.png') }}" class="bubble bubble-top-center">
+    <img src="{{ url_for('static', filename='images/bubbles-two.png') }}" class="bubble bubble-top-left-mid">
+    <img src="{{ url_for('static', filename='images/bubbles-two.png') }}" class="bubble bubble-top-right-mid">
+
+    
+
+    <!-- Welcome Text -->
+    <h1>Welcome to ApexShine Cleaning!</h1>
+    <p>Your trusted cleaning partner in the GTA.</p>
+</div>
+
+<img src="{{ url_for('static', filename='images/bubbles-two.png') }}" class="bubble-bottom-far">
+<img src="{{ url_for('static', filename='images/bubbles-four.png') }}" class="bubble-bottom-center">
+<img src="{{ url_for('static', filename='images/bubbles-two.png') }}" class="bubble-bottom-right">
+
+
+
+    
+    
+{% endblock %}

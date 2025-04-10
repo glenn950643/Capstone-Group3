@@ -1,0 +1,43 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ApexShine Cleaning</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="{{ request.path|replace('/', '') or 'home' }}">  <!-- dynamic body class -->
+
+    <!-- Unified Top Bar with Logo and Navigation -->
+    <header class="topbar">
+        <div class="logo-container">
+            <a href="/">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="ApexShine Logo" class="top-logo">
+            </a>
+        </div>
+    
+        <nav class="navbar-links">
+            <a href="/">Home</a>
+            <a href="/about">About Us</a>
+            <a href="/get_quote">Get a Quote</a>
+            <a href="/room_analysis">Get Room Analysis</a>
+            <a href="/insights">Get Company Insights</a>
+            <a href="/team">About the Team</a>
+        </nav>
+    
+        <div class="call-us">
+            <div class="call-icon">
+                <img src="{{ url_for('static', filename='images/call_us.png') }}" alt="Phone Icon">
+            </div>
+            <div class="call-text">
+                <span>Call Us!</span><br>
+                <strong>123 456 7891</strong>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content Block (No white box now) -->
+    {% block content %}{% endblock %}
+
+</body>
+</html>
